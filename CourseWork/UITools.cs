@@ -13,6 +13,7 @@ namespace CourseWork
         public static void ChangeLabelValueWithLerp(System.Windows.Forms.Label label, float endValue, float step)
         {
             float firstValue = float.Parse(label.Text);
+            //1123
         }
     }
 }
