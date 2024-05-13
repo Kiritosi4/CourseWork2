@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CourseWork.Persistance;
+using CourseWork.Presentation;
+using CourseWork.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +16,22 @@ namespace CourseWork
 {
 
 
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
         Point _mousePoint;
         TabController _tabController;
 
-        public Form1()
+        public MainWindow()
         {
             InitializeComponent();
 
             UserControl[] tabs = new UserControl[] {
-                new Expenses()
+                new ExpensesForm(),
+                new ProfitForm(),
+                new Budjets(),
+                new TargetsForm(),
+                new SettingsForm()
+                
             };
             _tabController = new TabController(tabView, tabs);
             _tabController.OpenTab(0);
@@ -131,6 +139,26 @@ namespace CourseWork
         private void expensesButton_Click(object sender, EventArgs e)
         {
             _tabController.OpenTab(0);
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            _tabController.OpenTab(4);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _tabController.OpenTab(2);
+        }
+
+        private void profitButton_Click(object sender, EventArgs e)
+        {
+            _tabController.OpenTab(1);
+        }
+
+        private void targetButton_Click(object sender, EventArgs e)
+        {
+            _tabController.OpenTab(3);
         }
     }
 }

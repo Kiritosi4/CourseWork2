@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseWork.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,15 @@ namespace CourseWork
         [STAThread]
         static void Main()
         {
+            Config.LoadCfg();
+
+            CategoriesDataBase.TryLoadCustomCategories();
+            Config.Db = new JsonDbRepository();
+            Config.Db.TryLoadDb();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainWindow());
         }
     }
 }

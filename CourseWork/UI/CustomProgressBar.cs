@@ -62,7 +62,7 @@ namespace CourseWork
 
                         if (!this.DesignMode)
                         {
-                            _stopPainting = true;
+                            _paintBack = true;
                         }
                     }
                 }

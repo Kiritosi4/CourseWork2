@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourseWork.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,13 @@ namespace CourseWork
 
             _tabView.Controls.Clear();
             _tabView.Controls.Add(_tabs[index]);
+
+            ITab tab = _tabs[index] as ITab; 
+            if (tab != null)
+            {
+                tab.OpenTab();
+            }
+
             CurrentTabId = index;
         }
     }
