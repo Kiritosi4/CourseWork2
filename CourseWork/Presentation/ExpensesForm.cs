@@ -11,7 +11,7 @@ namespace CourseWork
 {
     public partial class ExpensesForm : UserControl, ITab
     {
-        public readonly DashboardController<Budjet> _operationWindowController;
+        DashboardController<Budjet> _operationWindowController;
 
         readonly Button[] _periodBtns;
 
@@ -21,6 +21,28 @@ namespace CourseWork
         {
             InitializeComponent();
 
+            SetController();
+
+            _periodBtns = new Button[]{
+                day_period_btn,
+                button4,
+                button7,
+                button8,
+                button9
+            };
+            _currPickedPeiodBtn = button4;
+
+            SettingsController.OnProfileChanged += HandleProfileChange;
+        }
+
+        void HandleProfileChange()
+        {
+            _operationWindowController._operations = Config.Db.Db.ExpensesList;
+            _operationWindowController.Initialize();
+        }
+
+        void SetController()
+        {
             _operationWindowController = new DashboardController<Budjet>(
                 ValueLabel,
                 categoryDropDown,
@@ -41,15 +63,6 @@ namespace CourseWork
 
             CategoriesDataBase.OnExpensesCategoriesChanged += _operationWindowController.SetNeedUpdate;
             BudjetController.OnBudjetsChanged += _operationWindowController.UpdateTargets;
-
-            _periodBtns = new Button[]{
-                day_period_btn,
-                button4,
-                button7,
-                button8,
-                button9
-            };
-            _currPickedPeiodBtn = button4;
         }
 
         void PickPeriod(int id)
@@ -61,6 +74,12 @@ namespace CourseWork
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (expenseTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Поле с суммой не должно быть пустым");
+                return;
+            }
+
             _operationWindowController.AddValue(
                 double.Parse(expenseTextBox.Text), 
                 categoryDropDown.SelectedValue.ToString(), 

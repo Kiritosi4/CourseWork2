@@ -16,7 +16,7 @@ namespace CourseWork.Presentation
 {
     public partial class ProfitForm : UserControl, ITab
     {
-        public readonly DashboardController<Target> _operationWindowController;
+        readonly DashboardController<Target> _operationWindowController;
 
         readonly Button[] _periodBtns;
 
@@ -56,6 +56,14 @@ namespace CourseWork.Presentation
                 button9
             };
             _currPickedPeiodBtn = button4;
+
+            SettingsController.OnProfileChanged += HandleProfitChange;
+        }
+
+        void HandleProfitChange()
+        {
+            _operationWindowController._operations = Config.Db.Db.ProfitList;
+            _operationWindowController.Initialize();
         }
 
         void PickPeriod(int id)
@@ -67,6 +75,12 @@ namespace CourseWork.Presentation
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (profitTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Поле с суммой не должно быть пустым");
+                return;
+            }
+
             _operationWindowController.AddValue(
                 double.Parse(profitTextBox.Text),
                 categoryDropDown.SelectedValue.ToString(),

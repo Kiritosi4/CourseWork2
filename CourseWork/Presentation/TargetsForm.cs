@@ -14,8 +14,13 @@ namespace CourseWork.Presentation
             InitializeComponent();
 
             _controller = new TargetController(targetsListView);
+            SettingsController.OnProfileChanged += HandleProfileChange;
         }
 
+        void HandleProfileChange()
+        {
+            _controller.Targets = Config.Db.Db.TargetList;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {

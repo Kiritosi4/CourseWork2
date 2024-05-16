@@ -31,6 +31,8 @@ namespace CourseWork
                 {
                     Db = new DbContext();
                 }
+
+                MessageBox.Show($"Файл с профилем не найден, изменения будут сохранятся в\n{Config.DefaultDbPath}");
                 return false;
             }
         }

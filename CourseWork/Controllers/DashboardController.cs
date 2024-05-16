@@ -26,7 +26,7 @@ namespace CourseWork.Controllers
         readonly Label _targetValueLabel;
         readonly Label _targetMaxValueLabel;
 
-        readonly List<Operation> _operations;
+        public List<Operation> _operations;
         readonly Dictionary<string, Category> _categories;
         readonly DataPointCollection _points;
         readonly Dictionary<string, T> _targets;
@@ -93,8 +93,13 @@ namespace CourseWork.Controllers
             _categoryDropdown.DisplayMember = "Value";
             _categoryDropdown.ValueMember = "Key";
 
-            
             UpdateCurrentTargetValue();
+        }
+
+        public void ChangeDataBase(List<Operation> operations)
+        {
+            _operations = operations;
+            Initialize();
         }
 
         public void AddValue(double value, string categoryId, DateTime date, string targetKey)
@@ -286,11 +291,11 @@ namespace CourseWork.Controllers
                     sortedOperations.Sort((x, y) => x.Value.CreateDate.CompareTo(y.Value.CreateDate));
                     break;
                 case 2:
-                    sortedOperations.Sort((x, y) => x.Value.Value.CompareTo(y.Value));
+                    sortedOperations.Sort((x, y) => x.Value.Value.CompareTo(y.Value.Value));
                     sortedOperations.Reverse();
                     break;
                 case 3:
-                    sortedOperations.Sort((x, y) => x.Value.Value.CompareTo(y.Value));
+                    sortedOperations.Sort((x, y) => x.Value.Value.CompareTo(y.Value.Value));
                     break;
                 case 4:
                     sortedOperations.Sort((x, y) => x.Value.CategoryId.CompareTo(y.Value.CategoryId));

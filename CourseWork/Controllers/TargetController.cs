@@ -10,14 +10,14 @@ namespace CourseWork.Controllers
     public class TargetController
     {
         readonly ListView _targetsListView;
-        readonly Dictionary<string, Target> _targets;
+        public Dictionary<string, Target> Targets;
 
         public static event Action OnTargetsChanged;
 
         public TargetController(ListView targetsListView)
         {
             _targetsListView = targetsListView;
-            _targets = Config.Db.Db.TargetList;
+            Targets = Config.Db.Db.TargetList;
 
             Initialize();
         }
@@ -32,7 +32,7 @@ namespace CourseWork.Controllers
         {
             _targetsListView.Items.Clear();
 
-            foreach(var target in _targets)
+            foreach(var target in Targets)
             {
                 var item = new ListViewItem(target.Value.Title);
                 item.Tag = target.Key;
@@ -52,14 +52,14 @@ namespace CourseWork.Controllers
 
         public void AddValue(string name, double value, double maxValue)
         {
-            Config.Db.AddToDict<Target>(_targets, Guid.NewGuid().ToString(), new Target(name, value, maxValue));
+            Config.Db.AddToDict<Target>(Targets, Guid.NewGuid().ToString(), new Target(name, value, maxValue));
             UpdateListView();
             OnTargetsChanged?.Invoke();
         }
 
         public void RemoveValue(string id)
         {
-            Config.Db.RemoveFromDict<Target>(_targets, id);
+            Config.Db.RemoveFromDict<Target>(Targets, id);
             UpdateListView();
             OnTargetsChanged?.Invoke();
         }
@@ -78,7 +78,7 @@ namespace CourseWork.Controllers
 
         public Target GetTarget(string id)
         {
-            return _targets[id];
+            return Targets[id];
         }
     }
 }

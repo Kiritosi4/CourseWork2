@@ -11,7 +11,7 @@ namespace CourseWork.Controllers
     {
         readonly ListView _budjetsListView;
         readonly ComboBox _categoriesDropDown;
-        readonly Dictionary<string, Budjet> _budjets;
+        public Dictionary<string, Budjet> Budgets;
 
         readonly Dictionary<string, Category> _categories;
         string[] _periodNames = new string[]
@@ -30,12 +30,11 @@ namespace CourseWork.Controllers
             _budjetsListView = budjetsListView;
             _categoriesDropDown = categoriesDropDown;
 
-            _budjets = Config.Db.Db.BudjetList;
+            Budgets = Config.Db.Db.BudjetList;
             _categories = CategoriesDataBase.AllExpenseCategories;
 
             Initialize();
         }
-
 
         public void Initialize()
         {
@@ -58,7 +57,7 @@ namespace CourseWork.Controllers
 
         public void UpdateBudjets()
         {
-            foreach (var budjet in _budjets)
+            foreach (var budjet in Budgets)
             {
                 budjet.Value.Update();
             }
@@ -68,7 +67,7 @@ namespace CourseWork.Controllers
         {
             _budjetsListView.Items.Clear();
 
-            foreach(var budjet in _budjets)
+            foreach(var budjet in Budgets)
             {
                 var item = new ListViewItem(budjet.Value.Title);
                 item.Tag = budjet.Key;
@@ -95,14 +94,14 @@ namespace CourseWork.Controllers
 
         public void AddValue(string name, double value, double maxValue, string catId, int periodId)
         {
-            Config.Db.AddToDict<Budjet>(_budjets, Guid.NewGuid().ToString(), new Budjet(name, value, maxValue, catId, Math.Max(periodId, 0)));
+            Config.Db.AddToDict<Budjet>(Budgets, Guid.NewGuid().ToString(), new Budjet(name, value, maxValue, catId, Math.Max(periodId, 0)));
             UpdateListView();
             OnBudjetsChanged?.Invoke();
         }
 
         public void RemoveValue(string id)
         {
-            Config.Db.RemoveFromDict<Budjet>(_budjets, id);
+            Config.Db.RemoveFromDict<Budjet>(Budgets, id);
             UpdateListView();
             OnBudjetsChanged?.Invoke();
         }
@@ -123,7 +122,7 @@ namespace CourseWork.Controllers
 
         public Budjet GetBudjet(string id)
         {
-            return _budjets[id];
+            return Budgets[id];
         }
     }
 }

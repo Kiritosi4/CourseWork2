@@ -33,6 +33,12 @@ namespace CourseWork.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (expenseTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Поле с суммой не должно быть пустым");
+                return;
+            }
+
             int newValue = int.Parse(expenseTextBox.Text);
 
             if (_operation.Target.Key != null && _targets.ContainsKey(_operation.Target.Key))

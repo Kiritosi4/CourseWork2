@@ -14,8 +14,14 @@ namespace CourseWork.Presentation
             InitializeComponent();
 
             _controller = new BudjetController(budjetsListView, catBox);
+            SettingsController.OnProfileChanged += HandleProfileChange;
         }
 
+
+        void HandleProfileChange()
+        {
+            _controller.Budgets = Config.Db.Db.BudjetList;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {

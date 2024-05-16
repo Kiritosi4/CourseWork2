@@ -183,7 +183,7 @@
             this.profilePathTExtBox.ForeColor = System.Drawing.Color.White;
             this.profilePathTExtBox.Location = new System.Drawing.Point(18, 88);
             this.profilePathTExtBox.Name = "profilePathTExtBox";
-            this.profilePathTExtBox.Size = new System.Drawing.Size(196, 26);
+            this.profilePathTExtBox.Size = new System.Drawing.Size(600, 26);
             this.profilePathTExtBox.TabIndex = 44;
             this.profilePathTExtBox.Text = "profiles/default.json";
             // 
@@ -312,7 +312,7 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Settings
+            // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
