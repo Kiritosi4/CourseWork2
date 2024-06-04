@@ -74,14 +74,14 @@ namespace CourseWork
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (expenseTextBox.Text.Length == 0)
+            if (!double.TryParse(expenseTextBox.Text, out double expenseValue))
             {
-                MessageBox.Show("Поле с суммой не должно быть пустым");
+                MessageBox.Show("В поле для суммы должно быть число");
                 return;
             }
 
             _operationWindowController.AddValue(
-                double.Parse(expenseTextBox.Text), 
+                expenseValue, 
                 categoryDropDown.SelectedValue.ToString(), 
                 dateTimePicker1.Value, 
                 targetsComboBox2.SelectedValue.ToString());
@@ -162,6 +162,12 @@ namespace CourseWork
         private void categoryDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             _operationWindowController.TryChooseBudjet(categoryDropDown.SelectedValue.ToString());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            _operationWindowController.ChangePeriod(DateTime.Now.AddYears(-100), DateTime.Now.AddYears(100));
+            PickPeriod(3);
         }
     }
 }

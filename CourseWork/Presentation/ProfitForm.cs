@@ -1,15 +1,8 @@
 ﻿using CourseWork.Controllers;
 using CourseWork.Interfaces;
-using CourseWork.Models;
 using CourseWork.Persistance;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseWork.Presentation
@@ -75,14 +68,14 @@ namespace CourseWork.Presentation
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (profitTextBox.Text.Length == 0)
+            if (!double.TryParse(profitTextBox.Text, out double profitValue))
             {
-                MessageBox.Show("Поле с суммой не должно быть пустым");
+                MessageBox.Show("Поле с суммой должно содержать число.");
                 return;
             }
 
             _operationWindowController.AddValue(
-                double.Parse(profitTextBox.Text),
+                profitValue,
                 categoryDropDown.SelectedValue.ToString(),
                 dateTimePicker1.Value,
                 targetsComboBox2.SelectedValue.ToString());
@@ -158,6 +151,12 @@ namespace CourseWork.Presentation
         {
             if (profitTextBox.Text == "Сумма")
                 profitTextBox.Text = string.Empty;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            _operationWindowController.ChangePeriod(DateTime.Now.AddYears(-100), DateTime.Now.AddYears(100));
+            PickPeriod(3);
         }
     }
 }

@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "Продукты", System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45))))), new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "250 руб.", System.Drawing.SystemColors.Info, System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45))))), new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "25.02.2024", System.Drawing.SystemColors.Info, System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45))))), new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))))}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Здоровье",
             "400 руб.",
             " 26.02.2024"}, -1, System.Drawing.SystemColors.Menu, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint34 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "1,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint35 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "2,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint36 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "3,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "1,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "2,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "3,0,0,0");
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.DashBoard = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.targetBar = new CourseWork.CustomProgressBar();
             this.targetsBox = new System.Windows.Forms.ComboBox();
             this.targetMaxValueLabel = new System.Windows.Forms.Label();
             this.targetValueLAbel = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.roundedPanel1 = new CourseWork.RoundedPanel();
             this.ValueLabel = new System.Windows.Forms.Label();
-            this.targetBar = new CourseWork.CustomProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.DashBoard)).BeginInit();
             this.panel1.SuspendLayout();
             this.roundedPanel2.SuspendLayout();
@@ -172,10 +172,10 @@
             this.date});
             this.operationsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.operationsList.HideSelection = false;
-            listViewItem23.Tag = "252332";
+            listViewItem1.Tag = "252332";
             this.operationsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem23,
-            listViewItem24});
+            listViewItem1,
+            listViewItem2});
             this.operationsList.Location = new System.Drawing.Point(11, 308);
             this.operationsList.Name = "operationsList";
             this.operationsList.Size = new System.Drawing.Size(387, 154);
@@ -249,40 +249,40 @@
             this.DashBoard.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.DashBoard.BorderSkin.BackColor = System.Drawing.Color.Black;
             this.DashBoard.BorderSkin.PageColor = System.Drawing.Color.Red;
-            chartArea12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            chartArea12.Name = "ChartArea1";
-            this.DashBoard.ChartAreas.Add(chartArea12);
-            legend12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            legend12.ForeColor = System.Drawing.Color.White;
-            legend12.Name = "Legend1";
-            this.DashBoard.Legends.Add(legend12);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            chartArea1.Name = "ChartArea1";
+            this.DashBoard.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            this.DashBoard.Legends.Add(legend1);
             this.DashBoard.Location = new System.Drawing.Point(11, 15);
             this.DashBoard.Name = "DashBoard";
-            series12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            series12.BorderWidth = 2;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series12.Color = System.Drawing.Color.Black;
-            series12.IsXValueIndexed = true;
-            series12.LabelBackColor = System.Drawing.Color.White;
-            series12.LabelBorderColor = System.Drawing.Color.Black;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            series12.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
-            dataPoint34.Label = "Продукты";
-            dataPoint34.LabelBackColor = System.Drawing.Color.White;
-            dataPoint34.LabelBorderColor = System.Drawing.Color.Black;
-            dataPoint35.Label = "Транспорт";
-            dataPoint35.LabelBackColor = System.Drawing.Color.White;
-            dataPoint35.LabelBorderColor = System.Drawing.Color.Black;
-            dataPoint36.Label = "Коммуналка";
-            dataPoint36.LabelBackColor = System.Drawing.Color.White;
-            dataPoint36.LabelBorderColor = System.Drawing.Color.Black;
-            series12.Points.Add(dataPoint34);
-            series12.Points.Add(dataPoint35);
-            series12.Points.Add(dataPoint36);
-            series12.YValuesPerPoint = 4;
-            this.DashBoard.Series.Add(series12);
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Color = System.Drawing.Color.Black;
+            series1.IsXValueIndexed = true;
+            series1.LabelBackColor = System.Drawing.Color.White;
+            series1.LabelBorderColor = System.Drawing.Color.Black;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+            dataPoint1.Label = "Продукты";
+            dataPoint1.LabelBackColor = System.Drawing.Color.White;
+            dataPoint1.LabelBorderColor = System.Drawing.Color.Black;
+            dataPoint2.Label = "Транспорт";
+            dataPoint2.LabelBackColor = System.Drawing.Color.White;
+            dataPoint2.LabelBorderColor = System.Drawing.Color.Black;
+            dataPoint3.Label = "Коммуналка";
+            dataPoint3.LabelBackColor = System.Drawing.Color.White;
+            dataPoint3.LabelBorderColor = System.Drawing.Color.Black;
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.YValuesPerPoint = 4;
+            this.DashBoard.Series.Add(series1);
             this.DashBoard.Size = new System.Drawing.Size(387, 256);
             this.DashBoard.TabIndex = 41;
             // 
@@ -309,6 +309,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(386, 184);
             this.panel1.TabIndex = 45;
+            // 
+            // targetBar
+            // 
+            this.targetBar.BarHeight = 25;
+            this.targetBar.ChannelColor = System.Drawing.Color.Gray;
+            this.targetBar.ForeColor = System.Drawing.Color.White;
+            this.targetBar.Location = new System.Drawing.Point(15, 39);
+            this.targetBar.Name = "targetBar";
+            this.targetBar.Size = new System.Drawing.Size(352, 23);
+            this.targetBar.SliderColor = System.Drawing.Color.RoyalBlue;
+            this.targetBar.TabIndex = 37;
+            this.targetBar.Value = 50;
             // 
             // targetsBox
             // 
@@ -473,6 +485,7 @@
             this.button8.TabIndex = 32;
             this.button8.Text = "Все";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // roundedPanel1
             // 
@@ -487,7 +500,7 @@
             // 
             // ValueLabel
             // 
-            this.ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.ValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ValueLabel.AutoEllipsis = true;
             this.ValueLabel.BackColor = System.Drawing.Color.Transparent;
@@ -501,19 +514,7 @@
             this.ValueLabel.Text = "Доходы за период\r\n123.5 ₽\r\n\r\n";
             this.ValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // targetBar
-            // 
-            this.targetBar.BarHeight = 25;
-            this.targetBar.ChannelColor = System.Drawing.Color.Gray;
-            this.targetBar.ForeColor = System.Drawing.Color.White;
-            this.targetBar.Location = new System.Drawing.Point(15, 39);
-            this.targetBar.Name = "targetBar";
-            this.targetBar.Size = new System.Drawing.Size(352, 23);
-            this.targetBar.SliderColor = System.Drawing.Color.RoyalBlue;
-            this.targetBar.TabIndex = 37;
-            this.targetBar.Value = 50;
-            // 
-            // ProfitWindow
+            // ProfitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

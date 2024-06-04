@@ -109,7 +109,9 @@
             chartArea1.Name = "ChartArea1";
             this.DashBoard.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            legend1.BorderWidth = 0;
             legend1.ForeColor = System.Drawing.Color.White;
+            legend1.ItemColumnSpacing = 25;
             legend1.Name = "Legend1";
             this.DashBoard.Legends.Add(legend1);
             this.DashBoard.Location = new System.Drawing.Point(12, 17);
@@ -486,6 +488,7 @@
             this.button8.TabIndex = 32;
             this.button8.Text = "Все";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // roundedPanel1
             // 
