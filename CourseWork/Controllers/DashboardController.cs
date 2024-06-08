@@ -133,7 +133,7 @@ namespace CourseWork.Controllers
             ValueSum = 0;
             _points.Clear();
             bool needToEdit = false;
-
+            var categorySummaries = new Dictionary<string, double>();
             foreach (var op in _operations)
             {
                 if(op.CreateDate >= PeriodStart && op.CreateDate <= PeriodEnd)
@@ -150,15 +150,24 @@ namespace CourseWork.Controllers
                         needToEdit = true;
                     }
 
+                    if (categorySummaries.ContainsKey(opCategory))
+                    {
+                        categorySummaries[opCategory] += op.Value;
+                    }
+                    else
+                    {
+                        categorySummaries.Add(opCategory, op.Value);
+                    }
+
                     var point = _points.Find(x => x.Label == opCategory);
                     if (point == null)
                     {
                         point = new DataPoint();
-                        point.Label = opCategory;
                         _points.Add(point);
                     }
                     point.YValues[0] += op.Value;
-                    
+                    point.Label = $"{opCategory}\n{Math.Round(categorySummaries[opCategory])}р.";
+
                 }
             }
 
