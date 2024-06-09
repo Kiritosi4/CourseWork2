@@ -96,6 +96,7 @@
             this.textBox3.Size = new System.Drawing.Size(378, 26);
             this.textBox3.TabIndex = 80;
             this.textBox3.Text = "0";
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress_1);
             // 
             // label4
             // 
@@ -130,6 +131,7 @@
             this.textBox2.Size = new System.Drawing.Size(378, 26);
             this.textBox2.TabIndex = 77;
             this.textBox2.Text = "1000";
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label1
             // 
@@ -246,7 +248,7 @@
             this.label3.TabIndex = 70;
             this.label3.Text = "Цели";
             // 
-            // TargetsWindow
+            // TargetsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

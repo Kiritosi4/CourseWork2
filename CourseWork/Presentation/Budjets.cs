@@ -65,6 +65,7 @@ namespace CourseWork.Presentation
             if (string.IsNullOrEmpty(titleBox.Text))
             {
                 MessageBox.Show("Название не должно быть пустым");
+                return;
             }
 
             _controller.EditValue(

@@ -24,6 +24,10 @@ namespace CourseWork.UI
             {
                 _controller.AddProfitCategory(profitCategoryNameTextBox.Text);
             }
+            else
+            {
+                MessageBox.Show("Название не должно быть пустым");
+            }
         }
 
         private void categoryDeleteBtn_Click(object sender, EventArgs e)

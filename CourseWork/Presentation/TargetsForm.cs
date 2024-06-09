@@ -70,6 +70,7 @@ namespace CourseWork.Presentation
             if (string.IsNullOrEmpty(titleBox.Text))
             {
                 MessageBox.Show("Название не должно быть пустым");
+                return;
             }
 
             _controller.AddValue(
@@ -101,7 +102,7 @@ namespace CourseWork.Presentation
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');
         }
 
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox3_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == ',');
         }
